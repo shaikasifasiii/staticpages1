@@ -217,12 +217,14 @@ export default {
         ]
       }
       localStorage.setItem('localImages', JSON.stringify(localImages))
+      this.state.images = [...localImages, this.state.images]
+      this.state.fetchedImages = this.state.images.slice(0, this.state.numImages);
+      this.closeModal()
     },
     closeModal() {
       this.state.dialog = false
       this.state.dialogTitle = ''
       this.state.dialogUrl = ''
-      console.log(this.state)
     }
   },
 };
@@ -465,7 +467,7 @@ input {
   font-weight: 500;
 }
 .fixed-size {
-  object-fit: contain;
+  object-fit: cover;
   width: 150px;
   height: 150px;
 }
