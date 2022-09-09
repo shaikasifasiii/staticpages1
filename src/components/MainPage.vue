@@ -176,7 +176,7 @@ export default {
       this.output = first + second;
     },
     changeSrc(event) {
-      event.target.src = '../assets/image-placeholder.png'
+      event.target.src = require('@/assets/image-placeholder.png')
     },
     checkScroll(event) {
       const el = event.target;
