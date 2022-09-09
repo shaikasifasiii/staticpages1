@@ -197,7 +197,7 @@ export default {
     onSubmit() {
       let localImages = [];
       if (localStorage.getItem('localImages')) {
-        localImages = JSON.parse(localImages);
+        localImages = JSON.parse(localStorage.getItem('localImages'));
         localImages.push({
           id: Math.floor(Math.random() * 10000),
           url: this.state.dialogUrl,
