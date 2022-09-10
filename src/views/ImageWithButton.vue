@@ -2,7 +2,7 @@
   <div class="flex justify-end mb-4">
     <div class="dropdown-container">
       <div
-        class="dropdown flex items-center justify-between"
+        class="dropdown w-96 h-8 rounded-lg cursor-pointer border-blue-900 border flex items-center justify-between"
         @click="menuClicked($event, 'album-dropdown')"
       >
         <div class="dropdown-value ml-2">
@@ -251,6 +251,14 @@ export default {
       }
       localStorage.setItem("localImages", JSON.stringify(localImages));
       this.state.images = [...localImages, ...this.state.images];
+      const uniq = []
+      this.state.images.forEach(image => {
+        const exists = uniq.find(img => image.id === img.id)
+        if (typeof exists === 'undefined') {
+          uniq.push(image)
+        }
+      })
+      this.state.images = uniq;
       this.state.fetchedImages = this.state.images.slice(
         0,
         this.state.numImages

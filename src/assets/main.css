@@ -24,18 +24,12 @@ a,
   outline: none;
   cursor: pointer;
   border: 1px solid;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .dropdown {
-  width: 250px;
-  height: 34px;
-  border-radius: 25px;
-  font-weight: 500;
-  font-size: 14px;
-  outline: none;
-  cursor: pointer;
   position: relative;
-  border: 1px solid;
 }
 
 .dropdown-value {
@@ -134,14 +128,12 @@ a,
 }
 
 .form-container .form-content .form-submit {
-  background-color: #000000;
-  color: #ffffff;
   margin: 40px auto 20px;
 }
 
 .form-container .form-content .form-cancel {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #ffffff !important;
+  color: #000000 !important;
   margin: 20px auto;
 }
 

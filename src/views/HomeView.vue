@@ -251,6 +251,14 @@ export default {
       }
       localStorage.setItem("localImages", JSON.stringify(localImages));
       this.state.images = [...localImages, ...this.state.images];
+      const uniq = []
+      this.state.images.forEach(image => {
+        const exists = uniq.find(img => image.id === img.id)
+        if (typeof exists === 'undefined') {
+          uniq.push(image)
+        }
+      })
+      this.state.images = uniq;
       this.state.fetchedImages = this.state.images.slice(
         0,
         this.state.numImages
