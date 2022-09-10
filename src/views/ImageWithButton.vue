@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-end mb-4">
+  <div class="flex justify-end mb-8">
     <div class="dropdown-container">
       <div
         class="dropdown w-96 h-8 rounded-lg cursor-pointer border-blue-900 border flex items-center justify-between"
@@ -30,7 +30,7 @@
   <div class="tab-content" @scroll="checkScroll">
     <div class="image-section flex items-center flex-wrap">
       <template v-for="image in state.fetchedImages" :key="image.id">
-        <div class="image-grid mr-4 mb-6 p-4 border" @click="openImageTab(image)">
+        <div class="image-grid mr-4 mb-6 p-6 border" @click="openImageTab(image)">
           <div :class="'image-thumbnail'">
             <img
               :src="image.thumbnailUrl"

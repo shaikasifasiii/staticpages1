@@ -18,7 +18,7 @@ a,
 .button {
   width: 140px;
   height: 34px;
-  border-radius: 25px;
+  border-radius: 8px;
   font-weight: 500;
   font-size: 14px;
   outline: none;
@@ -170,6 +170,7 @@ input {
 .image-section .image-grid {
   width: 150px;
   box-sizing: content-box !important;
+  background-color: #ffffff;
 }
 .image-section .image-grid .image-title {
   white-space: nowrap;
@@ -183,4 +184,8 @@ input {
   object-fit: cover;
   width: 150px;
   height: 150px;
+}
+
+body {
+  background-color: #f1f5f1;
 }
