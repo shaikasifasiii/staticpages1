@@ -1,8 +1,8 @@
 <template>
   <div class="flex items-center m-2">
-    <input class="p-2 text-base text-black mr-4" :id="firstName" @input="cleanAndAttach" />
-    <input class="p-2 text-base text-black mr-4" :id="secondName" @input="cleanAndAttach" />
-    <div class="text-capitalize">{{ output }}</div>
+    <input class="p-2 border border-blue-700 text-base text-black mr-4" :id="firstName" @input="cleanAndAttach" />
+    <input class="p-2 border border-blue-700 text-base text-black mr-4" :id="secondName" @input="cleanAndAttach" />
+    <div class="capitalize">{{ output }}</div>
   </div>
 </template>
 
