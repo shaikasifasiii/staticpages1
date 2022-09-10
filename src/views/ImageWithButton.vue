@@ -2,7 +2,17 @@
   <div class="flex justify-end mb-8">
     <div class="dropdown-container">
       <div
-        class="dropdown w-96 h-8 rounded-lg cursor-pointer border-blue-900 border flex items-center justify-between"
+        class="
+          dropdown
+          w-96
+          h-8
+          rounded-lg
+          cursor-pointer
+          border-blue-900 border
+          flex
+          items-center
+          justify-between
+        "
         @click="menuClicked($event, 'album-dropdown')"
       >
         <div class="dropdown-value ml-2">
@@ -21,16 +31,21 @@
             {{ item.title }}
           </div>
         </div>
-        <div v-if="state.albumId !==''" class="remove" @click="removeAlbum">X</div>
-        <div v-if="state.albumId ===''" class="dropdown-toggle"></div>
+        <div v-if="state.albumId !== ''" class="remove" @click="removeAlbum">
+          X
+        </div>
+        <div v-if="state.albumId === ''" class="dropdown-toggle"></div>
       </div>
     </div>
-    <button @click="openModal" class="button ml-2">Add</button>
+    <button @click="openModal" class="w-28 bg-blue-700 h-10 text-white rounded-lg mr-4">Add</button>
   </div>
   <div class="tab-content" @scroll="checkScroll">
     <div class="image-section flex items-center flex-wrap">
       <template v-for="image in state.fetchedImages" :key="image.id">
-        <div class="image-grid mr-4 mb-6 p-6 border" @click="openImageTab(image)">
+        <div
+          class="image-grid mr-4 mb-6 p-6 border"
+          @click="openImageTab(image)"
+        >
           <div :class="'image-thumbnail'">
             <img
               :src="image.thumbnailUrl"
@@ -48,36 +63,41 @@
         </div>
       </template>
       <div class="w-full flex justify-center p-4">
-        <button @click="loadMore" class="button">Load more</button>
+        <button @click="loadMore" class="w-28 bg-blue-700 h-10 text-white rounded-lg">Load more</button>
       </div>
       <div v-if="this.state.dialog" class="popup-container">
         <div class="form-container">
-          <div class="form-content">
-            <h1 class="form-header">ADD A IMAGE</h1>
-            <div class="form">
+          <div class="form-content bg-white">
+            <h1 class="form-header">ADD AN IMAGE</h1>
+            <div class="form p-8">
               <input
-                class="mr-2 form-field"
+                class="p-2 text-base text-black mb-8 w-full"
                 placeholder="Title"
-                @input="this.state.dialogTitle = $event.target.value"
-              />
-              <input
-                class="mr-2 form-field"
+              /><input
+                class="p-2 text-base text-black mb-8 w-full"
                 placeholder="Enter Url"
-                @input="this.state.dialogUrl = $event.target.value"
               />
-
-              <button
-                class="button form-submit"
-                @click="onSubmit"
-              >
-                Submit
-              </button>
-              <button
-                class="button form-cancel"
+              <div class="flex w-full justify-between">
+                <button
+                  class="w-28 bg-blue-700 h-10 text-white rounded-lg mr-4"
+                  @click="onSubmit"
+                >
+                  Submit
+                </button>
+                <button
+                  class="
+                    w-28
+                    border-blue-700
+                    h-10
+                    text-blue-700
+                    border
+                    rounded-lg
+                  "
                 @click="closeModal"
-              >
-                Cancel
-              </button>
+                >
+                  Cancel
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -214,7 +234,7 @@ export default {
     },
     openImageTab(image) {
       const elements = document.getElementsByClassName("show");
-      console.log(elements)
+      console.log(elements);
       if (elements.length < 1) {
         if (image.url.includes("http")) {
           window.open(image.url, "_blank");
@@ -249,13 +269,13 @@ export default {
       }
       localStorage.setItem("localImages", JSON.stringify(localImages));
       this.state.images = [...localImages, ...this.state.images];
-      const uniq = []
-      this.state.images.forEach(image => {
-        const exists = uniq.find(img => image.id === img.id)
-        if (typeof exists === 'undefined') {
-          uniq.push(image)
+      const uniq = [];
+      this.state.images.forEach((image) => {
+        const exists = uniq.find((img) => image.id === img.id);
+        if (typeof exists === "undefined") {
+          uniq.push(image);
         }
-      })
+      });
       this.state.images = uniq;
       this.state.fetchedImages = this.state.images.slice(
         0,
