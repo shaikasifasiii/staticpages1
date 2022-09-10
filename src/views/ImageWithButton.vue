@@ -30,7 +30,7 @@
   <div class="tab-content" @scroll="checkScroll">
     <div class="image-section flex items-center flex-wrap">
       <template v-for="image in state.fetchedImages" :key="image.id">
-        <div class="image-grid p-4 border" @click="openImageTab(image)">
+        <div class="image-grid mr-4 mb-6 p-4 border" @click="openImageTab(image)">
           <div :class="'image-thumbnail'">
             <img
               :src="image.thumbnailUrl"
@@ -216,7 +216,8 @@ export default {
     },
     openImageTab(image) {
       const elements = document.getElementsByClassName("show");
-      if (elements.length < 0) {
+      console.log(elements)
+      if (elements.length < 1) {
         if (image.url.includes("http")) {
           window.open(image.url, "_blank");
         }

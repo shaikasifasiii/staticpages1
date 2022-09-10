@@ -9,13 +9,13 @@ import { RouterLink, RouterView } from "vue-router";
       <div class="tab">
         <div class="tab-labels">
           <router-link to="/" class="label cursor-pointer">
-            <span class="text-uppercase">IMAGES TASK with button</span>
+            <span class="uppercase">IMAGES TASK with button</span>
           </router-link>
           <router-link to="/extra-tasks" class="label cursor-pointer">
-            <span class="text-uppercase">EXTRA CHALLENGE</span>
+            <span class="uppercase">EXTRA CHALLENGE</span>
           </router-link>
           <router-link to="/images-with-scroll" class="label cursor-pointer">
-            <span class="text-uppercase">IMAGES TASK with infinite scroll</span>
+            <span class="uppercase">IMAGES TASK with infinite scroll</span>
           </router-link>
         </div>
         <RouterView />

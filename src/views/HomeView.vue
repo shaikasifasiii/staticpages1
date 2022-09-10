@@ -217,7 +217,7 @@ export default {
     },
     openImageTab(image) {
       const elements = document.getElementsByClassName("show");
-      if (elements.length < 0) {
+      if (elements.length < 1) {
         if (image.url.includes("http")) {
           window.open(image.url, "_blank");
         }
