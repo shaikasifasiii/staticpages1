@@ -5,7 +5,7 @@
         class="
           dropdown
           w-96
-          h-8
+          h-10
           rounded-lg
           cursor-pointer
           border-blue-900 border
@@ -37,7 +37,7 @@
         <div v-if="state.albumId === ''" class="dropdown-toggle"></div>
       </div>
     </div>
-    <button @click="openModal" class="w-28 bg-blue-700 h-10 text-white rounded-lg mr-4">Add</button>
+    <button @click="openModal" class="w-32 bg-blue-700 h-10 text-white rounded-lg ml-4">Add Image</button>
   </div>
   <div class="tab-content" @scroll="checkScroll">
     <div class="image-section flex items-center flex-wrap">
@@ -46,7 +46,7 @@
           class="image-grid mr-4 mb-6 p-6 border"
           @click="openImageTab(image)"
         >
-          <div :class="'image-thumbnail'">
+          <div :class="'image-thumbnail mb-2'">
             <img
               :src="image.thumbnailUrl"
               :class="image.local ? 'fixed-size' : ''"

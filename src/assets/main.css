@@ -14,20 +14,6 @@ a,
 
 @media (min-width: 1024px) {
 }
-
-.button {
-  width: 140px;
-  height: 34px;
-  border-radius: 8px;
-  font-weight: 500;
-  font-size: 14px;
-  outline: none;
-  cursor: pointer;
-  border: 1px solid;
-  background-color: #000000;
-  color: #ffffff;
-}
-
 .dropdown {
   position: relative;
 }
@@ -48,14 +34,14 @@ a,
   height: 7px;
   border-style: solid;
   right: 10px;
-  top: 10px;
+  top: 15px;
   transform: rotate(45deg);
 }
 
 .remove {
   position: absolute;
   right: 10px;
-  top: 5px;
+  top: 8px;
 }
 
 .dropdown-menu {
@@ -99,39 +85,9 @@ a,
   text-align: center;
 }
 
-.form-container .form-content .form-field {
-  margin: 19px 0;
-  width: 100%;
-  font-size: 12px;
-  color: #bbb9b9;
-  letter-spacing: 0.37px;
-  background-color: #ffffff;
-}
-
-.form-container .form-content select.form-field {
-  padding: 10px 16px;
-  border-radius: 25px;
-}
-
-.form-container .form-content .form-submit {
-  margin: 40px auto 20px;
-}
-
-.form-container .form-content .form-cancel {
-  background-color: #ffffff !important;
-  color: #000000 !important;
-  margin: 20px auto;
-}
-
-.form-container .form-content select.form-field option {
-  padding: 10px 16px;
-  font-size: 12px;
-  color: #bbb9b9;
-}
-
 * {
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: #292929;
 }
 
