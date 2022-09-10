@@ -176,8 +176,7 @@ input {
   margin-bottom: 50px;
 }
 .image-section .image-grid {
-  width: 250px;
-  padding: 0 0.5rem;
+  width: 150px;
   box-sizing: content-box !important;
 }
 .image-section .image-grid .image-title {

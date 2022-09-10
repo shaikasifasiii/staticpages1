@@ -25,18 +25,12 @@
         <div v-if="state.albumId ===''" class="dropdown-toggle"></div>
       </div>
     </div>
-    <button @click="openModal" class="button mr-2">Add</button>
+    <button @click="openModal" class="button ml-2">Add</button>
   </div>
   <div class="tab-content" @scroll="checkScroll">
     <div class="image-section flex items-center flex-wrap">
       <template v-for="image in state.fetchedImages" :key="image.id">
-        <div class="image-grid" @click="openImageTab(image)">
-          <div class="image-title" :title="'Title: ' + image.title">
-            {{ image.title }}
-          </div>
-          <div class="image-title" :title="'Album: ' + getAlbum(image.albumId)">
-            {{ getAlbum(image.albumId) }}
-          </div>
+        <div class="image-grid p-4 border" @click="openImageTab(image)">
           <div :class="'image-thumbnail'">
             <img
               :src="image.thumbnailUrl"
@@ -44,6 +38,12 @@
               @error="changeSrc($event)"
               alt="image"
             />
+          </div>
+          <div class="image-title" :title="'Title: ' + image.title">
+            {{ image.title }}
+          </div>
+          <div class="image-title" :title="'Album: ' + getAlbum(image.albumId)">
+            {{ getAlbum(image.albumId) }}
           </div>
         </div>
       </template>
@@ -249,7 +249,7 @@ export default {
         ];
       }
       localStorage.setItem("localImages", JSON.stringify(localImages));
-      this.state.images = [...localImages, this.state.images];
+      this.state.images = [...localImages, ...this.state.images];
       this.state.fetchedImages = this.state.images.slice(
         0,
         this.state.numImages

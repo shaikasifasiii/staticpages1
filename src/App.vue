@@ -3,7 +3,7 @@ import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <div class="">
+  <div class="container mx-auto">
     <div class="main-content">
       <h1 class="header">Tasks</h1>
       <div class="tab">

@@ -25,7 +25,7 @@
         <div v-if="state.albumId ===''" class="dropdown-toggle"></div>
       </div>
     </div>
-    <button @click="openModal" class="button mr-2">Add</button>
+    <button @click="openModal" class="button ml-2">Add</button>
   </div>
   <div class="tab-content" @scroll="checkScroll">
     <div class="image-section flex items-center flex-wrap">
@@ -250,7 +250,7 @@ export default {
         ];
       }
       localStorage.setItem("localImages", JSON.stringify(localImages));
-      this.state.images = [...localImages, this.state.images];
+      this.state.images = [...localImages, ...this.state.images];
       this.state.fetchedImages = this.state.images.slice(
         0,
         this.state.numImages
