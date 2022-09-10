@@ -68,14 +68,12 @@
 
               <button
                 class="button form-submit"
-                type="button"
                 @click="onSubmit"
               >
                 Submit
               </button>
               <button
                 class="button form-cancel"
-                type="button"
                 @click="closeModal"
               >
                 Cancel
