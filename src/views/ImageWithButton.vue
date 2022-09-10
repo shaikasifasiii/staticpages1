@@ -62,7 +62,7 @@
           </div>
         </div>
       </template>
-      <div class="w-full flex justify-center p-4">
+      <div class="w-full flex justify-center p-4" v-if="loadMore">
         <button @click="loadMore" class="w-28 bg-blue-700 h-10 text-white rounded-lg">Load more</button>
       </div>
       <div v-if="this.state.dialog" class="popup-container">
@@ -176,6 +176,7 @@ export default {
         dialogUrl: "",
         albumId: "",
         albums: [],
+        loadMore: true,
       },
     };
   },
@@ -220,7 +221,7 @@ export default {
       );
     },
     loadMore() {
-      this.state.numImages = this.state.numImages + 200;
+      this.state.numImages = this.state.numImages + 50;
       if (this.state.albumId !== "") {
         this.state.fetchedImages = this.state.images
           .filter((image) => this.state.albumId === image.albumId)
@@ -231,10 +232,12 @@ export default {
           this.state.numImages
         );
       }
+      if (this.state.fetchedImages.length === this.state.images.length) {
+        this.state.loadMore = false
+      }
     },
     openImageTab(image) {
       const elements = document.getElementsByClassName("show");
-      console.log(elements);
       if (elements.length < 1) {
         if (image.url.includes("http")) {
           window.open(image.url, "_blank");
@@ -245,6 +248,7 @@ export default {
       this.state.dialog = true;
     },
     onSubmit() {
+      this.state.dialog = false;
       let localImages = [];
       if (localStorage.getItem("localImages")) {
         localImages = JSON.parse(localStorage.getItem("localImages"));
