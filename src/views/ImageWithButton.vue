@@ -21,11 +21,11 @@
             {{ item.title }}
           </div>
         </div>
-        <div class="remove" @click="removeAlbum">X</div>
-        <div class="dropdown-toggle"></div>
+        <div v-if="state.albumId !==''" class="remove" @click="removeAlbum">X</div>
+        <div v-if="state.albumId ===''" class="dropdown-toggle"></div>
       </div>
     </div>
-    <button @click="openModal" class="button">Add</button>
+    <button @click="openModal" class="button mr-2">Add</button>
   </div>
   <div class="tab-content" @scroll="checkScroll">
     <div class="image-section flex items-center flex-wrap">
@@ -129,7 +129,7 @@ export default {
         if (elements.length > 0) {
           event.preventDefault();
           for (let i = 0; i < elements.length; i++) {
-            if (elements.item(i).classList.value.includes("dropdown")) {
+            if (elements.item(i).classList.value.includes("dropdown-menu")) {
               const classes = elements
                 .item(i)
                 .classList.value.split(" ")
