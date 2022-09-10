@@ -15,7 +15,7 @@
         "
         @click="menuClicked($event, 'album-dropdown')"
       >
-        <div class="dropdown-value ml-2">
+        <div class="dropdown-value ml-2 h-9 flex items-center">
           {{ state.albumId !== "" ? getAlbum(state.albumId) : "Select album" }}
         </div>
         <div
